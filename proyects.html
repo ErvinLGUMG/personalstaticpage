@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dashboard Admin Template by Tooplate.com</title>
+    <!--
+
+    Template 2108 Dashboard
+
+	http://www.tooplate.com/view/2108-dashboard
+
+    -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+    <!-- https://fonts.google.com/specimen/Open+Sans -->
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="css/fullcalendar.min.css">
+    <!-- https://fullcalendar.io/ -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="css/tooplate.css">
+    <!-- mis estilos personalizados -->
+    <link rel="stylesheet" href="css/misestilos.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body id="reportsPage">
+    <div class="" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-xl navbar-light bg-light">
+                        <a class="navbar-brand" href="#">
+                            <i class="fas fa-3x fa fa-hashtag tm-site-icon"></i>
+                            <h1 class="tm-site-title mb-0">DEVELOPER</h1>
+                        </a>
+                        <button class="navbar-toggler ml-auto mr-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="index.html">Acerca de Mi
+                                        
+                                    </a>
+                                </li>
+                                
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="proyects.html">Proyectos
+                                        <span class="sr-only">(current)</span>
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="contact.html">Contacto</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="habilidades.html">Habilidades</a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="referencias.html">Referencias</a>
+                                </li>
+                                
+                            </ul>
+                            
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <!-- row -->
+            <div class="row tm-mt-big">
+                <div class="tm-col tm-col-full">
+                    <div class="bg-white tm-block h-100">
+                        <div class="container">
+                            <h2>PROYECTOS</h2>
+                            <ul class="nav nav-tabs">
+                              <li><a data-toggle="tab" href="#menu1">Proyecto 1</a></li>
+                              <li><a data-toggle="tab" href="#menu2">Proyecto 2</a></li>
+                              <li><a data-toggle="tab" href="#menu3">proyecto 3</a></li>
+                            </ul>
+                          
+                            <div class="tab-content">
+                              <div id="menu1" class="tab-pane fade in active">
+                                <h3>proyecto 1</h3>
+                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                              </div>
+                              <div id="menu2" class="tab-pane fade">
+                                <h3>proyecto 2</h3>
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                              </div>
+                              <div id="menu3" class="tab-pane fade">
+                                <h3>proyecto 3</h3>
+                                <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                              </div>
+                            </div>
+                          </div>
+                          
+                    </div>
+                </div>
+            
+            </div>
+            <footer class="row tm-mt-small">
+                <div class="col-12 font-weight-light">
+                    <p class="d-inline-block tm-bg-black text-white py-2 px-4">
+                        Copyright &copy; 2018 Admin Dashboard . Created by L
+                        
+                    </p>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- https://jquery.com/download/ -->
+    <script src="js/moment.min.js"></script>
+    <!-- https://momentjs.com/ -->
+    <script src="js/utils.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <!-- http://www.chartjs.org/docs/latest/ -->
+    <script src="js/fullcalendar.min.js"></script>
+    <!-- https://fullcalendar.io/ -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- https://getbootstrap.com/ -->
+    <script src="js/tooplate-scripts.js"></script>
+    <script>
+        let ctxLine,
+            ctxBar,
+            ctxPie,
+            optionsLine,
+            optionsBar,
+            optionsPie,
+            configLine,
+            configBar,
+            configPie,
+            lineChart;
+        barChart, pieChart;
+        // DOM is ready
+        $(function () {
+            updateChartOptions();
+            drawLineChart(); // Line Chart
+            drawBarChart(); // Bar Chart
+            drawPieChart(); // Pie Chart
+            drawCalendar(); // Calendar
+
+            $(window).resize(function () {
+                updateChartOptions();
+                updateLineChart();
+                updateBarChart();
+                reloadPage();
+            });
+        })
+    </script>
+</body>
+</html>
